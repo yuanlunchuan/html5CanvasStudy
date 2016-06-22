@@ -69,5 +69,13 @@ function drawClock() {
   drawNumerals();
 }
 
+//draw clock
 context.font = FONT_HEIGHT + 'px Arial';
 loop = setInterval(drawClock, 1000);
+
+//deal with event
+var i = 1;
+canvas.addEventListener('mousemove', function(e){
+  i += 1;
+  console.info("-----------i "+i);
+});
