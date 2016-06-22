@@ -36,5 +36,41 @@ function drawy() {
   }
 }
 
+function drawSin() {
+  var x = Math.PI/2.0;
+  var y = 50*Math.sin(0.01*Math.PI);
+  context.moveTo(10, y+200);
+
+  for(var i=1; i<500;i++){
+    x = i*(Math.PI/2.0)+10;
+    y = 50*Math.sin(0.01*Math.PI*x);
+    context.lineTo(x, y+200);
+  }
+  context.stroke();
+}
+
 drawx();
 drawy();
+drawSin();
+
+var paint = false;
+var i=1;
+
+canvas.addEventListener('mousedown', function(e){
+  paint = true;
+  console.info("-----------e: "+JSON.stringify(e));
+  context.moveTo(100,100);
+});
+
+canvas.addEventListener('mousemove', function(){
+  if (paint) {
+    i++;
+    context.lineTo(100+10*i,100+10*i);
+    console.info("--------start draw---"+100+10*i);
+    context.stroke();
+  }
+});
+
+canvas.addEventListener('mouseup', function(){
+  paint = false;
+});
