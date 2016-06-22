@@ -23,6 +23,7 @@ function drawNumerals() {
   numerals.forEach(function(numeral){
     angle = Math.PI/6*(numeral-3);
     numeralWidth = context.measureText(numeral).width;
+
     context.fillText(numeral,
       canvas.width/2 + Math.cos(angle)*HAND_RADIUS - 
         numeralWidth/2,
@@ -56,7 +57,7 @@ function drawHands() {
 
    drawHand(hour*5 + (date.getMinutes()/60)*5, true, 0.5);
    drawHand(date.getMinutes(), false, 0.5);
-   drawHand(date.getSeconds, false, 0.2);
+   drawHand(date.getSeconds(), false, 0.2);
 }
 
 function drawClock() {
