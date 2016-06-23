@@ -53,6 +53,21 @@ drawx();
 drawy();
 drawSin();
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 var paint = false;
 var i=1;
 
